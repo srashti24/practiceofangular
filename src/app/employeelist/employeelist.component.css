@@ -1,0 +1,16 @@
+#customers {
+    font-family: sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+
+#customers th {
+    background-color: #4CAF50;
+    color: white;
+}

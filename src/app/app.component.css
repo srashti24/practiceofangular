@@ -1,0 +1,17 @@
+h1{
+    color: #0000ff;
+
+
+    background-color: red
+}
+.boldClass{
+    font-weight: bold;
+}
+.colorClass{
+
+color:red;
+}
+.italicClass
+{
+    font-style:italic;
+}

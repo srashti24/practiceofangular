@@ -1,0 +1,56 @@
+
+<!-- ************@INPUT DECORATOR*****-->
+<app-employeecount [all]="getTotalEmployeeCount()"
+    [male]="getTotalMaleCount()"
+    [female]="getTotalFeMaleCount()"
+  (countRadioButtonSelectionChanged) = "onEmployeeCountRadioButtonChange($event)">
+</app-employeecount>
+<!--****************************-->
+
+<table id="customers">
+  <thead>
+    <tr>
+      <th>code</th>
+      <th>name</th>
+      <th>gender</th>
+     
+      <th>salary</th>
+      <th>dob</th>
+      <!-- <th>index</th>
+    <th>first</th>
+    <th>last</th>
+    <th>even</th>
+    <th>odd</th>
+   -->
+
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let emp of employees;" >
+    <!--FOR TRACKBY property of ng for also dor last,first etc property of 8ngFor -->
+    <!-- <tr *ngFor="let emp of employees;trackBy:trackByEmpcode;let i=index;let isFirst=first;let isLast=last;
+    let iseven=even;let isOdd=odd;"> -->
+    <tr *ngIf= "selectedEmployeeCountRadioButton=='All' || selectedEmployeeCountRadioButton == emp.gender" >
+      <td>{{emp.code}}</td>                   
+      <td>{{emp.name|employeePipe:emp.gender}}</td>
+      <td>{{emp.gender}}</td>
+      <td>{{emp.salary|currency:'UDS':true:'1.3-3'}}</td>
+      <td>{{emp.dob | date:'fullDate'|uppercase}}</td>
+      <!-- <td>{{i}}</td>
+      <td>{{isFirst}}</td>
+      <td>{{isLast}}</td>
+      <td>{{isOdd}}</td>-->
+    </tr>
+  </ng-container>
+    <tr *ngIf=" selectedEmployeeCountRadioButton == 'emp.gender'">
+      FGFD
+        <td>{{emp.code}}</td>                   
+        <td>{{emp.name|employeePipe:emp.gender}}</td>
+        <td>{{emp.gender}}</td>
+        <td>{{emp.salary|currency:'UDS':true:'1.3-3'}}</td>
+        <td>{{emp.dob | date:'fullDate'|uppercase}}</td>
+    </tr>
+  </tbody>            
+</table>      
+{{selectedEmployeeCountRadioButton}}
+                                      
